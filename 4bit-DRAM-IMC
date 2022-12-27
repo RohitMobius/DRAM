@@ -1,0 +1,134 @@
+// Generated for: spectre
+// Generated on: Dec 27 14:14:34 2022
+// Design library name: RE_vikram
+// Design cell name: re_edram_sa_test
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/mnt/cadence_tools/gpdk045_v_6_0/gpdk045/../models/spectre/gpdk045.scs" section=mc
+
+// Library name: RE1
+// Cell name: sa_new
+// View name: schematic
+subckt sa_new EN GND INN INP ON OP VDD
+    PM3 (ON OP VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    PM2 (ON EN VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    PM1 (OP ON VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    PM0 (OP EN VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    NM4 (net4 EN GND GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    NM3 (net2 INP net4 GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    NM2 (net3 INN net4 GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    NM1 (ON OP net2 GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+    NM0 (OP ON net3 GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+ends sa_new
+// End of subcircuit definition.
+
+// Library name: RE_vikram
+// Cell name: re_edram_sa_test
+// View name: schematic
+I28 (EN2 0 inn2 net18 on2 op2 net16) sa_new
+I16 (EN1 0 inn1 inp1 on1 op1 net9) sa_new
+V30 (inn2 0) vsource dc=700m type=dc
+V29 (net16 0) vsource dc=1 type=dc
+V27 (net11 0) vsource dc=0 type=dc
+V24 (VDD 0) vsource dc=1 type=dc
+V23 (net4 0) vsource dc=0 type=dc
+V22 (net3 0) vsource dc=0 type=dc
+V13 (inn1 0) vsource dc=500m type=dc
+V12 (net9 0) vsource dc=1 type=dc
+V20 (net5 0) vsource dc=0 type=dc
+V18 (net6 0) vsource dc=0 type=dc
+V8 (VDD 0) vsource dc=1 type=dc
+V9 (net7 0) vsource dc=0 type=dc
+V28 (EN2 0) vsource type=pulse val0=1 val1=0 period=10n width=6n
+V26 (net12 0) vsource type=pulse val0=1 val1=0 delay=3n
+V25 (net13 0) vsource type=pulse val0=1 val1=0 delay=3n
+V5 (in 0) vsource type=pulse val0=1 val1=0 period=10n delay=0 width=3n
+V6 (vin1 0) vsource type=pulse val0=1 val1=0 delay=3n
+V19 (EN1 0) vsource type=pulse val0=1 val1=0 period=10n width=6n
+V7 (vin2 0) vsource type=pulse val0=1 val1=0 delay=3n
+C3 (inp1 0) capacitor c=1p
+C2 (inp1 0) capacitor c=1p
+C1 (inp1 0) capacitor c=1p
+C0 (inp1 0) capacitor c=1p
+NM9 (HA on1 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM8 (HA op2 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM7 (VDD net13 inp1 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM6 (VDD net12 inp1 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM5 (inp1 net10 net14 0) g45n1svt w=(480n) l=45n nf=1 as=67.2f ad=67.2f \
+        ps=1.24u pd=1.24u nrd=291.667m nrs=291.667m sa=140n sb=140n \
+        sd=160n sca=102.54472 scb=0.08351 scc=0.01219 m=(1)
+NM4 (inp1 net8 net14 0) g45n1svt w=(480n) l=45n nf=1 as=67.2f ad=67.2f \
+        ps=1.24u pd=1.24u nrd=291.667m nrs=291.667m sa=140n sb=140n \
+        sd=160n sca=102.54472 scb=0.08351 scc=0.01219 m=(1)
+NM2 (VDD vin1 inp1 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM3 (VDD vin2 inp1 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM1 (inp1 net2 in 0) g45n1svt w=(480n) l=45n nf=1 as=67.2f ad=67.2f \
+        ps=1.24u pd=1.24u nrd=291.667m nrs=291.667m sa=140n sb=140n \
+        sd=160n sca=102.54472 scb=0.08351 scc=0.01219 m=(1)
+NM0 (inp1 net1 in 0) g45n1svt w=(480n) l=45n nf=1 as=67.2f ad=67.2f \
+        ps=1.24u pd=1.24u nrd=291.667m nrs=291.667m sa=140n sb=140n \
+        sd=160n sca=102.54472 scb=0.08351 scc=0.01219 m=(1)
+PM5 (HA on1 net17 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM4 (net17 op2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM3 (net10 net11 net4 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM1 (net8 net11 net3 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM2 (net2 net7 net5 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM0 (net1 net7 net6 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+simulatorOptions options psfversion="1.4.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=20n errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save I16:7 V18:p V18:p 
+saveOptions options save=allpub
